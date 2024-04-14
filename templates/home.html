@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FWI Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("https://images.unsplash.com/photo-1473448912268-2022ce9509d8?q=80&w=1741&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            color: #ffffff;
+        }
+        .login {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        }
+        h1 {
+            color: black;
+            text-align: center;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        input {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+        }
+        button {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #ffffff;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #b300b0;
+        }
+        h2 {
+            text-align: center;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>I'm Kanishk Mandrelia</h1>
+    <h1>This is my first end-to-end ML project</h1>
+    <h1>Algerian Forest Fire</h1>
+    <div class="login">
+        <h1>FWI Prediction</h1>
+        <form action="{{ url_for('predict_datapoint')}}" method="post">
+            <input type="text" name="Temperature" placeholder="Temperature" required>
+            <input type="text" name="RH" placeholder="RH" required>
+            <input type="text" name="Ws" placeholder="Ws" required>
+            <input type="text" name="Rain" placeholder="Rain" required>
+            <input type="text" name="FFMC" placeholder="FFMC" required>
+            <input type="text" name="DMC" placeholder="DMC" required>
+            <input type="text" name="ISI" placeholder="ISI" required>
+            <input type="text" name="Classes" placeholder="Classes" required>
+            <input type="text" name="Region" placeholder="Region" required>
+            <button type="submit">Predict</button>
+        </form>
+        <h2>The FWI prediction is {{result}}</h2>
+    </div>
+</body>
+</html>
