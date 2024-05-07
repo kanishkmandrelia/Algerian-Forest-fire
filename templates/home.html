@@ -32,9 +32,9 @@
         }
 
         .login {
-            max-width: 400px;
+            max-width: 600px; /* Increased max-width for a wider login container */
             padding: 20px;
-            background-color: rgba(0, 0, 0, 0.3); /* More transparent background color */
+            background-color: rgba(0, 0, 0, 0.3);
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
             z-index: 1;
@@ -48,13 +48,13 @@
         }
 
         form {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 10px;
         }
 
         input[type="text"] {
             padding: 10px;
-            margin-bottom: 15px;
             border: 1px solid #cccccc;
             border-radius: 5px;
             background-color: rgba(255, 255, 255, 0.8);
@@ -75,6 +75,7 @@
             transition: background-color 0.3s ease;
             text-transform: uppercase;
             font-weight: bold;
+            margin-left: 50px; /* Shift the button towards the right by 50 pixels */
         }
 
         button:hover {
