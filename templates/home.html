@@ -32,12 +32,13 @@
         }
 
         .login {
-            max-width: 600px; /* Increased max-width for a wider login container */
+            max-width: 600px;
             padding: 20px;
             background-color: rgba(0, 0, 0, 0.3);
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
             z-index: 1;
+            position: relative; /* Added */
         }
 
         h1 {
@@ -65,7 +66,16 @@
             color: grey; 
         }
 
-        button {
+        .button-container {
+            display: flex;
+            justify-content: flex-end; /* Align button to the right */
+            margin-top: 0px;
+            position: absolute; /* Position the container absolutely */
+            right: 260px; /* Adjust as needed */
+            bottom: 70px; /* Adjust as needed */
+        }
+
+        .predict-button {
             padding: 10px 20px;
             border: none;
             border-radius: 5px;
@@ -75,10 +85,9 @@
             transition: background-color 0.3s ease;
             text-transform: uppercase;
             font-weight: bold;
-            margin-left: 50px; /* Shift the button towards the right by 50 pixels */
         }
 
-        button:hover {
+        .predict-button:hover {
             background-color: #0056b3;
         }
 
@@ -103,8 +112,10 @@
             <input type="text" name="ISI" placeholder="ISI" required>
             <input type="text" name="Classes" placeholder="Classes" required>
             <input type="text" name="Region" placeholder="Region" required>
-            <button type="submit">Predict</button>
-        </form>
+            <div class="button-container">
+                <button class="predict-button" type="submit">Predict</button>
+            </div>
+        </form><br><br><br>
         <h2>The FWI prediction is {{result}}</h2>
     </div>
 </body>
